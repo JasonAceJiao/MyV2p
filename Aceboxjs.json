@@ -1,12 +1,12 @@
 {
-  "id": "sunert.app.sub", 
+  "id": "JasonJiao.app.sub", 
   "author": "@JasonJiao", 
   "icon": "https://avatars.githubusercontent.com/u/73757817?s=60&v=4", 
   "name": "JasonJiao 签到应用订阅", 
   "repo": "https://github.com/JasonAceJiao", 
   "apps": [
     {
-      "author": "@sunert", 
+      "author": "@JasonJiao", 
       "descs_html": [
         "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://github.com/Sunert/Script/raw/master/TaskConf/youth/readme.md\">配置说明</a></h4>", 
         "<br />", 
