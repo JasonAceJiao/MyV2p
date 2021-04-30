@@ -1,8 +1,6 @@
 /*
-更新时间: 2021-02-26 11:32
-Github Actions使用方法见[@lxk0301](https://raw.githubusercontent.com/lxk0301/scripts/master/githubAction.md) 使用方法大同小异
-
-中青看点浏览赚任务，手动完成任务，获取请求体，支持boxjs及Github Actions，多请求用"&"分开，点击任务，支持自动获取请求
+整理时间: 2021-4-30
+中青看点浏览赚任务，手动完成任务，获取请求体，多请求用"&"分开，点击任务，支持自动获取请求
 
 https:\/\/ios\.baertt\.com\/v5\/task\/browse_start\.json url script-request-body youth_gain.js
 
