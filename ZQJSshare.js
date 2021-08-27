@@ -19,7 +19,7 @@ async function getShareInfo() {
   try {
     if ($request.headers && $request.url.indexOf("user.youth.com/count2") > -1) {
       var url = $request.url;
-      var s_si = url.match(/si=(.*?)&from=weixin&/)[1];
+      var s_si = url.match(/si=(.*?)&/)[1];
       console.log("url:" + url);
       console.log("s_si:" + s_si);
       $.msg("中青安卓极速版分享", "", "数据获取成功");
