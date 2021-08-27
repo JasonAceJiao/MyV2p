@@ -1,0 +1,4 @@
+hostname = user.youth.com
+
+#中青极速版安卓快应用分享阅读助力10次
+https:\/\/user\.youth\.com\/count2\/callback url script-request-header https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/ZQJSshare.js
