@@ -1,14 +1,14 @@
 /*
-Author: Curtin
-Date: 2021.7.4 22:25
+是根据原作者Curtin修改的，实际和中青没差多少。感谢Curtin提供的思路。
+Date: 2021 8.28 02:24
 晶彩分享阅读助力10次
 
 使用方法：
 Quantumuil X：添加远程重写
 [rewrite_remote]
-https://gitee.com/curtinlv/qx/raw/master/rewrite/youth.conf, tag=晶彩 by Curtin, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/JCshare.conf, tag=晶彩 by Curtin, update-interval=172800, opt-parser=false, enabled=true
 
-晶彩分享一篇文章到自己的微信上，自己点击一下即触发会自动完成10好有阅读奖励 500青豆/次。
+晶彩分享一篇文章到自己的微信上，自己点击一下即触发会自动完成10好有阅读奖励 500青豆/次，也可以帮别人点。
 
  */
 const $ = new Env("晶彩分享阅读-助力10次");
