@@ -1,12 +1,65 @@
-, 可进入"京东金融"APP (iOS), 在"首页"点击"签到"并签到一次, 返回抓包app搜索关键字 h5/m/appSign 复制请求体填入json串数据内即可
-*/
-
 var Key = ''; //该参数已废弃; 仅用于下游脚本的兼容, 请使用json串数据 ↓
 
 var DualKey = ''; //该参数已废弃; 仅用于下游脚本的兼容, 请使用json串数据  ↓
 
 var OtherKey = ``; //无限账号Cookie json串数据, 请严格按照json格式填写, 具体格式请看以下样例:
 
+/*以下样例为双账号("cookie"为必须,其他可选), 第一个账号仅包含Cookie, 第二个账号包含Cookie和金融签到Body: 
+
+var OtherKey = `[{
+  "cookie": "pt_key=xxx;pt_pin=yyy;"
+}, {
+  "cookie": "pt_key=yyy;pt_pin=xxx;",
+  "jrBody": "reqData=xxx"
+}]`
+
+   注1: 以上选项仅针对于JsBox或Node.js, 如果使用QX,Surge,Loon, 请使用脚本获取Cookie.
+   注2: 多账号用户抓取"账号1"Cookie后, 请勿点击退出账号(可能会导致Cookie失效), 需清除浏览器资料或更换浏览器登录"账号2"抓取.
+   注3: 如果使用Node.js, 需自行安装'request'模块. 例: npm install request -g
+   注4: Node.js或JSbox环境下已配置数据持久化, 填写Cookie运行一次后, 后续更新脚本无需再次填写, 待Cookie失效后重新抓取填写即可.
+   注5: 脚本将自动处理"持久化数据"和"手动填写cookie"之间的重复关系, 例如填写多个账号Cookie后, 后续其中一个失效, 仅需填写该失效账号的新Cookie即可, 其他账号不会被清除.
+
+*************************
+【Surge 4.2+ 脚本配置】:
+*************************
+
+[Script]
+京东多合一签到 = type=cron,cronexp=5 0 * * *,wake-system=1,timeout=60,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
+
+获取京东Cookie = type=http-request,requires-body=1,pattern=^https:\/\/(api\.m|me-api|ms\.jr)\.jd\.com\/(client\.action\?functionId=signBean|user_new\/info\/GetJDUserInfoUnion\?|gw\/generic\/hy\/h5\/m\/appSign\?),script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
+
+[MITM]
+hostname = ms.jr.jd.com, me-api.jd.com, api.m.jd.com
+
+*************************
+【Loon 2.1+ 脚本配置】:
+*************************
+
+[Script]
+cron "5 0 * * *" tag=京东多合一签到, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
+
+http-request ^https:\/\/(api\.m|me-api|ms\.jr)\.jd\.com\/(client\.action\?functionId=signBean|user_new\/info\/GetJDUserInfoUnion\?|gw\/generic\/hy\/h5\/m\/appSign\?) tag=获取京东Cookie, requires-body=true, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
+
+[MITM]
+hostname = ms.jr.jd.com, me-api.jd.com, api.m.jd.com
+
+*************************
+【 QX 1.0.10+ 脚本配置 】 :
+*************************
+
+[task_local]
+# 京东多合一签到
+5 0 * * * https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js, tag=京东多合一签到, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/jd.png,enabled=true
+
+[rewrite_local]
+# 获取京东Cookie. 
+^https:\/\/(api\.m|me-api)\.jd\.com\/(client\.action\?functionId=signBean|user_new\/info\/GetJDUserInfoUnion\?) url script-request-header https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
+
+# 获取钢镚签到body. 
+^https:\/\/ms\.jr\.jd\.com\/gw\/generic\/hy\/h5\/m\/appSign\? url script-request-body https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
+
+[mitm]
+hostname = ms.jr.jd.com, me-api.jd.com, api.m.jd.com
 
 *************************/
 
@@ -46,6 +99,10 @@ async function all(cookie, jrBody) {
         JingDongGetCash(stop), //京东领现金
         JingDongShake(stop), //京东摇一摇
         JDSecKilling(stop), //京东秒杀
+        // JingRongDoll(stop, 'JRDoll', '京东金融-签壹', '4D25A6F482'),
+        // JingRongDoll(stop, 'JRThreeDoll', '京东金融-签叁', '69F5EC743C'),
+        // JingRongDoll(stop, 'JRFourDoll', '京东金融-签肆', '30C4F86264'),
+        // JingRongDoll(stop, 'JRFiveDoll', '京东金融-签伍', '1D06AA3B0F')
       ]);
       await Promise.all([
         JDUserSignPre(stop, 'JDUndies', '京东商城-内衣', '4PgpL1xqPSW1sVXCJ3xopDbB1f69'), //京东内衣馆
@@ -59,6 +116,8 @@ async function all(cookie, jrBody) {
         JDUserSignPre(stop, 'JDWomen', '京东商城-女装', 'DpSh7ma8JV7QAxSE2gJNro8Q2h9'), //京东女装馆
         JDUserSignPre(stop, 'JDBook', '京东商城-图书', '3SC6rw5iBg66qrXPGmZMqFDwcyXi'), //京东图书
         // JDUserSignPre(stop, 'ReceiveJD', '京东商城-领豆', 'Ni5PUSK7fzZc4EKangHhqPuprn2'), //京东-领京豆
+        JingRongDoll(stop, 'JTDouble', '京东金贴-双签', '1DF13833F7'), //京东金融 金贴双签
+        // JingRongDoll(stop, 'XJDouble', '金融现金-双签', 'F68B2C3E71', '', '', '', 'xianjin') //京东金融 现金双签
       ]);
       await Promise.all([
         JDUserSignPre(stop, 'JDStory', '京东失眠-补贴', 'UcyW9Znv3xeyixW1gofhW2DAoz4'), //失眠补贴
@@ -77,6 +136,7 @@ async function all(cookie, jrBody) {
         JDUserSignPre(stop, 'JDVege', '京东商城-菜场', 'Wcu2LVCFMkBP3HraRvb7pgSpt64'), //京东菜场
         // JDUserSignPre(stop, 'JDLive', '京东智能-生活', 'KcfFqWvhb5hHtaQkS4SD1UU6RcQ') //京东智能生活
       ]);
+      await JingRongDoll(stop, 'JDDouble', '金融京豆-双签', 'F68B2C3E71', '', '', '', 'jingdou'); //京东金融 京豆双签
       break;
     default:
       await JingDongBean(0); //京东京豆
@@ -90,6 +150,12 @@ async function all(cookie, jrBody) {
       await JingDongSubsidy(Wait(stop)); //京东金贴
       await JingDongShake(Wait(stop)); //京东摇一摇
       await JDSecKilling(Wait(stop)); //京东秒杀
+      // await JingRongDoll(Wait(stop), 'JRThreeDoll', '京东金融-签叁', '69F5EC743C');
+      // await JingRongDoll(Wait(stop), 'JRFourDoll', '京东金融-签肆', '30C4F86264');
+      // await JingRongDoll(Wait(stop), 'JRFiveDoll', '京东金融-签伍', '1D06AA3B0F');
+      // await JingRongDoll(Wait(stop), 'JRDoll', '京东金融-签壹', '4D25A6F482');
+      // await JingRongDoll(Wait(stop), 'XJDouble', '金融现金-双签', 'F68B2C3E71', '', '', '', 'xianjin'); //京东金融 现金双签
+      await JingRongDoll(Wait(stop), 'JTDouble', '京东金贴-双签', '1DF13833F7'); //京东金融 金贴双签
       await JDUserSignPre(Wait(stop), 'JDStory', '京东失眠-补贴', 'UcyW9Znv3xeyixW1gofhW2DAoz4'); //失眠补贴
       await JDUserSignPre(Wait(stop), 'JDPhone', '京东手机-小时', '4Vh5ybVr98nfJgros5GwvXbmTUpg'); //手机小时达
       await JDUserSignPre(Wait(stop), 'JDCard', '京东商城-卡包', '7e5fRnma6RBATV9wNrGXJwihzcD'); //京东卡包
@@ -116,6 +182,7 @@ async function all(cookie, jrBody) {
       await JDUserSignPre(Wait(stop), 'JDJiaDian', '京东商城-家电', '3uvPyw1pwHARGgndatCXddLNUxHw'); // 京东小家电馆
       // await JDUserSignPre(Wait(stop), 'ReceiveJD', '京东商城-领豆', 'Ni5PUSK7fzZc4EKangHhqPuprn2'); //京东-领京豆
       // await JDUserSignPre(Wait(stop), 'JDJewels', '京东商城-珠宝', 'zHUHpTHNTaztSRfNBFNVZscyFZU'); //京东珠宝馆
+      await JingRongDoll(Wait(stop), 'JDDouble', '金融京豆-双签', 'F68B2C3E71', '', '', '', 'jingdou'); //京东金融 京豆双签
       break;
   }
   await Promise.all([
@@ -1061,7 +1128,94 @@ function JingDongSubsidy(s) {
   });
 }
 
-
+function JingRongDoll(s, key, title, code, type, num, award, belong) {
+  merge[key] = {};
+  return new Promise(resolve => {
+    if (disable(key)) return resolve()
+    setTimeout(() => {
+      const DollUrl = {
+        url: "https://nu.jr.jd.com/gw/generic/jrm/h5/m/process",
+        headers: {
+          Cookie: KEY
+        },
+        body: `reqData=${encodeURIComponent(`{"actCode":"${code}","type":${type?type:`3`}${code=='F68B2C3E71'?`,"frontParam":{"belong":"${belong}"}`:code==`1DF13833F7`?`,"frontParam":{"channel":"JR","belong":4}`:``}}`)}`
+      };
+      $nobyda.post(DollUrl, async function(error, response, data) {
+        try {
+          if (error) {
+            throw new Error(error)
+          } else {
+            var cc = JSON.parse(data)
+            const Details = LogDetails ? "response:\n" + data : '';
+            if (cc.resultCode == 0) {
+              if (cc.resultData.data.businessData != null) {
+                console.log(`\n${title}查询成功 ${Details}`)
+                if (cc.resultData.data.businessData.pickStatus == 2) {
+                  if (data.match(/\"rewardPrice\":\"\d.*?\"/)) {
+                    const JRDoll_bean = data.match(/\"rewardPrice\":\"(\d.*?)\"/)[1]
+                    const JRDoll_type = data.match(/\"rewardName\":\"金贴奖励\"/) ? true : false
+                    await JingRongDoll(s, key, title, code, '4', JRDoll_bean, JRDoll_type)
+                  } else {
+                    merge[key].success = 1
+                    merge[key].notify = `${title}: 成功, 明细: 无奖励 🐶`
+                  }
+                } else if (code == 'F68B2C3E71' || code == '1DF13833F7') {
+                  if (!data.match(/"businessCode":"30\dss?q"/)) {
+                    merge[key].success = 1
+                    const ct = data.match(/\"count\":\"?(\d.*?)\"?,/)
+                    if (code == 'F68B2C3E71' && belong == 'xianjin') {
+                      merge[key].Money = ct ? ct[1] > 9 ? `0.${ct[1]}` : `0.0${ct[1]}` : 0
+                      merge[key].notify = `${title}: 成功, 明细: ${merge[key].Money||`无`}现金 💰`
+                    } else if (code == 'F68B2C3E71' && belong == 'jingdou') {
+                      merge[key].bean = ct ? ct[1] : 0;
+                      merge[key].notify = `${title}: 成功, 明细: ${merge[key].bean||`无`}京豆 🐶`
+                    } else if (code == '1DF13833F7') {
+                      merge[key].subsidy = ct ? ct[1] : 0;
+                      merge[key].notify = `${title}: 成功, 明细: ${merge[key].subsidy||`无`}金贴 💰`
+                    }
+                  } else {
+                    const es = cc.resultData.data.businessMsg
+                    const ep = cc.resultData.data.businessData.businessMsg
+                    const tp = data.match(/已领取|300ss?q/) ? `已签过` : `${ep||es||cc.resultMsg||`未知`}`
+                    merge[key].notify = `${title}: 失败, 原因: ${tp} ⚠️`
+                    merge[key].fail = 1
+                  }
+                } else {
+                  merge[key].notify = `${title}: 失败, 原因: 已签过 ⚠️`;
+                  merge[key].fail = 1
+                }
+              } else if (cc.resultData.data.businessCode == 200) {
+                console.log(`\n${title}签到成功 ${Details}`)
+                if (!award) {
+                  merge[key].bean = num ? num.match(/\d+/)[0] : 0
+                } else {
+                  merge[key].subsidy = num || 0
+                }
+                merge[key].success = 1
+                merge[key].notify = `${title}: 成功, 明细: ${(award?num:merge[key].bean)||`无`}${award?`金贴 💰`:`京豆 🐶`}`
+              } else {
+                console.log(`\n${title}领取异常 ${Details}`)
+                if (num) console.log(`\n${title} 请尝试手动领取, 预计可得${num}${award?`金贴`:`京豆`}: \nhttps://uf1.jr.jd.com/up/redEnvelopes/index.html?actCode=${code}\n`);
+                merge[key].fail = 1;
+                merge[key].notify = `${title}: 失败, 原因: 领取异常 ⚠️`;
+              }
+            } else {
+              console.log(`\n${title}签到失败 ${Details}`)
+              const redata = typeof(cc.resultData) == 'string' ? cc.resultData : ''
+              merge[key].notify = `${title}: 失败, ${cc.resultCode==3?`原因: Cookie失效‼️`:`${redata||'原因: 未知 ⚠️'}`}`
+              merge[key].fail = 1;
+            }
+          }
+        } catch (eor) {
+          $nobyda.AnError(title, key, eor, response, data)
+        } finally {
+          resolve()
+        }
+      })
+    }, s)
+    if (out) setTimeout(resolve, out + s)
+  });
+}
 
 function JingDongGetCash(s) {
   merge.JDGetCash = {};
@@ -1271,7 +1425,7 @@ function TotalBean() {
           $nobyda.headUrl = cc.data.userInfo.baseInfo.headImageUrl || ""
           console.log(`\n京东-总京豆查询成功 ${Details}`)
         } else {
-          const name = decodeURIComponent(KEY.split(/pin=(.+?);/)[1] || '');
+          const name = decodeURIComponent(KEY.split(/pt_pin=(.+?);/)[1] || '');
           merge.TotalBean.nickname = cc.retcode == 1001 ? `${name} (CK失效‼️)` : "";
           console.log(`\n京东-总京豆查询失败 ${Details}`)
         }
@@ -1444,10 +1598,10 @@ function CookieMove(oldCk1, oldCk2, oldKey1, oldKey2, newKey) {
 function checkFormat(value) { //check format and delete duplicates
   let n, k, c = {};
   return value.reduce((t, i) => {
-    k = ((i.cookie || '').match(/(wskey|pin)=.+?;/g) || []).sort();
+    k = ((i.cookie || '').match(/(pt_key|pt_pin)=.+?;/g) || []).sort();
     if (k.length == 2) {
       if ((n = k[1]) && !c[n]) {
-        i.userName = i.userName ? i.userName : decodeURIComponent(n.split(/pin=(.+?);/)[1]);
+        i.userName = i.userName ? i.userName : decodeURIComponent(n.split(/pt_pin=(.+?);/)[1]);
         i.cookie = k.join('')
         if (i.jrBody && !i.jrBody.includes('reqData=')) {
           console.log(`异常钢镚Body已过滤: ${i.jrBody}`)
@@ -1463,7 +1617,7 @@ function checkFormat(value) { //check format and delete duplicates
 }
 
 function CookieUpdate(oldValue, newValue, path = 'cookie') {
-  let item, type, name = (oldValue || newValue || '').split(/pin=(.+?);/)[1];
+  let item, type, name = (oldValue || newValue || '').split(/pt_pin=(.+?);/)[1];
   let total = $nobyda.read('CookiesJD');
   try {
     total = checkFormat(JSON.parse(total || '[]'));
@@ -1473,7 +1627,7 @@ function CookieUpdate(oldValue, newValue, path = 'cookie') {
     total = [];
   }
   for (let i = 0; i < total.length; i++) {
-    if (total[i].cookie && new RegExp(`pin=${name};`).test(total[i].cookie)) {
+    if (total[i].cookie && new RegExp(`pt_pin=${name};`).test(total[i].cookie)) {
       item = i;
       break;
     }
@@ -1501,7 +1655,7 @@ function GetCookie() {
   const req = $request;
   if (req.method != 'OPTIONS' && req.headers) {
     const CV = (req.headers['Cookie'] || req.headers['cookie'] || '');
-    const ckItems = CV.match(/(wskey|pin)=.+?;/g);
+    const ckItems = CV.match(/(pt_key|pt_pin)=.+?;/g);
     if (/^https:\/\/(me-|)api(\.m|)\.jd\.com\/(client\.|user_new)/.test(req.url)) {
       if (ckItems && ckItems.length == 2) {
         const value = CookieUpdate(null, ckItems.join(''))
@@ -1767,4 +1921,5 @@ function nobyda() {
     time,
     done
   }
+
 };
