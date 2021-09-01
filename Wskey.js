@@ -1700,7 +1700,7 @@ function GetCookie() {
   if (req.method != 'OPTIONS' && req.headers) {
     const CV = (req.headers['Cookie'] || req.headers['cookie'] || '');
     const ckItems = CV.match(/(pt_key|pt_pin)=.+?;/g);
-    if (/^https:\/\/(me-|)api(\.m|)\.jd\.com\/openUpgrade\.test(req.url)) {
+    if (/^https:\/\/(me-|)api(\.m|)\.jd\.com\/openUpgrade\/.test(req.url)) {
       if (ckItems && ckItems.length == 2) {
         const value = CookieUpdate(null, ckItems.join(''))
         if (value.type !== -1) {
