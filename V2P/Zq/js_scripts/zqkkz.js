@@ -1,9 +1,12 @@
 /*
-本脚本来自于shaolin-kongfu。
+shaolin-kongfu。
 
 1、替换zqkd_param=为p=，使其正常提交，中青Android版本不再限制3.6.0。
 2、为加快重跑速度降低黑号风险，对任务执行成功并已获取奖励的任务进行缓存，当日重跑时不再重复执行请求。
-3、原提交失败任务会被脚本删除，更新后不再删除，仅做缓存记录并在重跑时重复提交，会在/docker/elecv2p/Store目录下每日新增[cache_zqkkz_reward_$yyyyMMdd,cache_zqllz_reward_$yyyyMMdd,cache_jckkz_reward_$yyyyMMdd]等文件，当文件删除时缓存失效。
+3、原提交失败任务会被脚本删除，更新后不再删除，仅做缓存记录并在重跑时重复提交，
+会在/docker/elecv2p/Store目录下每日新增[cache_zqkkz_reward_$yyyyMMdd,
+cache_zqllz_reward_$yyyyMMdd,cache_jckkz_reward_$yyyyMMdd]等文件，
+当文件删除时缓存失效。
 
 [rewrite_local]
 
