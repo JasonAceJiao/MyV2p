@@ -45,7 +45,7 @@
       "match": "https://kandian.wkandian.com/v5/CommonReward/toGetReward.json",
       "stage": "req",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqbox.js",
-      "enable": true
+      "enable": false
     },
     {
       "match": "https://kandian.wkandian.com/v5/wechat/withdraw2.json",
