@@ -1,6 +1,8 @@
 {
   "name": "中青重写订阅",
+  "type": "rewrite",
   "author": "elecV2p",
+  "resource": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqcx.json",
   "mitmhost": [
     "kandian.wkandian.com"
   ],
@@ -8,67 +10,67 @@
     {
       "match": "https://kandian.wkandian.com/v5/article/info.json",
       "stage": "req",
-      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqwz.js",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqwz.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/article/detail.json",
       "stage": "req",
-      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqwz.js",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqwz.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/user/stay.json",
       "stage": "req",
-      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqwz.js",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqwz.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/CommonReward/toGetReward.json",
       "stage": "req",
-      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqqd.js",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqqd.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v17/NewTask/getTaskList.json",
       "stage": "req",
-      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zq_today_score.js",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zq_today_score.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/nameless/adlickstart.json",
       "stage": "req",
-      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqkkz.js",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqkkz.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/CommonReward/toGetReward.json",
       "stage": "req",
-      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqbox.js",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqbox.js",
       "enable": false
     },
     {
       "match": "https://kandian.wkandian.com/v5/wechat/withdraw2.json",
       "stage": "req",
-      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zq_withdraw.js",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zq_withdraw.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/task/browse_start.json",
       "stage": "req",
-      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqllz.js",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqllz.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/Sousuo/playStart.json",
       "stage": "req",
-      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqssz.js",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqssz.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v17/Ad/getReward.json",
       "stage": "req",
-      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zq_5_60.js",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zq_5_60.js",
       "enable": true
     }
   ]
