@@ -2,9 +2,7 @@
 中青自动提现 zq_withdraw.js，
 调用zq_cookie,zq_withdraw,zq_cash
 
-赞赏:邀请码57984759
 
-万分感谢！！！
 
 脚本地址：
 https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zq_withdraw.js
