@@ -1,8 +1,7 @@
-
 {
   "name": "中青看点定时任务订阅",
   "desc": "无",
-  "date": "2021-08-05 20:32:08",
+  "date": "2021-11-13 20:32:08",
   "author": "https://t.me/ShaolinTemple1",
   "resource": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_cron.json",
   "list": [
@@ -12,7 +11,7 @@
       "time": "15 2 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqqd.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqqd.js"
       }
     },
     {
@@ -22,17 +21,17 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqwz.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqwz.js"
       }
     },
     {
-     "name": "中青看看赚",
+      "name": "中青看看赚",
       "type": "cron",
       "time": "45 9 * * *",
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqkkz.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqkkz.js"
       }
     },
     {
@@ -42,7 +41,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zq_share.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_share.js"
       }
     },
     {
@@ -52,7 +51,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zq_Adv_video.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_Adv_video.js"
       }
     },
     {
@@ -62,7 +61,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqbox.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqbox.js"
       }
     },
     {
@@ -72,7 +71,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zq_today_score.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_today_score.js"
       }
     },
     {
@@ -82,7 +81,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zq_friendSign.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_friendSign.js"
       }
     },
     {
@@ -92,7 +91,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zq_Rotary.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_Rotary.js"
       }
     },
     {
@@ -102,7 +101,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zq_wakeup.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_wakeup.js"
       }
     },
     {
@@ -112,7 +111,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqssz.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqssz.js"
       }
     },
     {
@@ -122,7 +121,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqllz.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqllz.js"
       }
     },
     {
@@ -132,7 +131,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zq_double.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_double.js"
       }
     },
     {
@@ -142,9 +141,8 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zq_withdraw.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_withdraw.js"
       }
     }
-
   ]
 }
