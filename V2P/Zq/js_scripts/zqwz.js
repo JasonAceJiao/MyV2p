@@ -8,11 +8,10 @@ shaolin-kongfu
 kandian.wkandian.com
 【rewrite】
 文章
-https://kandian.wkandian.com/v5/article/info.json 重写目标 https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqwz.js
-视频
-https://kandian.wkandian.com/v5/article/detail.json 重写目标 https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqwz.js
+https://kandian.wkandian.com/v5/article/info.json 重写目标 https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqwz.js
+https://kandian.wkandian.com/v5/article/detail.json 重写目标 https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqwz.js
 时长
-https://kandian.wkandian.com/v5/user/stay.json 重写目标 https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqwz.js
+https://kandian.wkandian.com/v5/user/stay.json 重写目标 https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqwz.js
 
 */
 
