@@ -9,11 +9,13 @@
       "match": "https://kandian.wkandian.com/v5/article/info.json",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqwz.js",
       "enable": true
+      "stage": "req"
     },
     {
       "match": "https://kandian.wkandian.com/v5/article/detail.json",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqwz.js",
       "enable": true
+      "stage": "req"
     },
     {
       "match": "https://kandian.wkandian.com/v5/user/stay.json",
