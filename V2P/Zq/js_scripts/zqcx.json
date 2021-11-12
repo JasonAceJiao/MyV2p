@@ -7,15 +7,15 @@
   "rewrite": [
     {
       "match": "https://kandian.wkandian.com/v5/article/info.json",
+      "stage": "req",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqwz.js",
       "enable": true
-      "stage": "req"
     },
     {
       "match": "https://kandian.wkandian.com/v5/article/detail.json",
+      "stage": "req",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqwz.js",
       "enable": true
-      "stage": "req"
     },
     {
       "match": "https://kandian.wkandian.com/v5/user/stay.json",
