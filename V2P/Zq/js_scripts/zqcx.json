@@ -225,6 +225,16 @@
           "type": "runjs",
           "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zq_withdraw.js"
         }
+      },
+      {
+        "name": "清空日志",
+        "type": "cron",
+        "time": "0 23 * * *",
+        "running": true,
+        "job": {
+          "type": "runjs",
+          "target": "https://ghproxy.com/https://raw.githubusercontent.com/elecV2/elecV2P/master/script/JSFile/deletelog.js"
+        }
       }
     ]
   }
