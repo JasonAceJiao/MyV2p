@@ -1,233 +1,141 @@
-
 /*
 shaolin-kongfu
 
 
-【MITM】
-kandian.wkandian.com
-【rewrite】
-文章
-https://kandian.wkandian.com/v5/article/info.json 重写目标 https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zqwz.js
-视频
-https://kandian.wkandian.com/v5/article/detail.json 重写目标 https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zqwz.js
-时长
-https://kandian.wkandian.com/v5/user/stay.json 重写目标 https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zqwz.js
+转盘抽奖，使用zq_cookie
 
-*/
 
-const $ = new Env("中青看点阅读文章");
+ */
+
+const $ = new Env("中青看点大转盘抽奖");
 const notify = $.isNode() ? require('./sendNotify') : '';
 message = ""
+let zq_cookie = $.isNode() ? (process.env.zq_cookie ? process.env.zq_cookie : "") : ($.getdata('zq_cookie') ? $.getdata('zq_cookie') : "")
+let zq_cookieArr = []
+let zq_cookies = ""
 
-
-let zqwzbody = $.isNode() ? (process.env.zqwzbody ? process.env.zqwzbody : "") : ($.getdata('zqwzbody') ? $.getdata('zqwzbody') : "")
-let zqwzbodyArr = []
-let zqwzbodys = ""
-
-let zq_timebody = $.isNode() ? (process.env.zq_timebody ? process.env.zq_timebody : "") : ($.getdata('zq_timebody') ? $.getdata('zq_timebody') : "")
-let zq_timebodyArr = []
-let zq_timebodys = ""
-let zqwznum
-let indexLast = $.getdata('zqbody_index') ? $.getdata('zqbody_index') : 0;
-const zq_timeheader = {
-    'device-platform': 'android',
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'Content-Length': '1197',
-    'Host': 'kandian.wkandian.com'
-}
-const wzheader = {
-    'device-platform': 'android',
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'Content-Length': '1203',
-    'Host': 'kandian.wkandian.com'
-}
-
-if (zq_timebody) {
-    if (zq_timebody.indexOf("&") == -1) {
-        zq_timebodyArr.push(zq_timebody)
-    } else if (zq_timebody.indexOf("&") > -1) {
-        zq_timebodys = zq_timebody.split("&")
-    } else if (process.env.zq_timebody && process.env.zq_timebody.indexOf('&') > -1) {
-        zq_timebodyArr = process.env.zq_timebody.split('&');
-        console.log(`您选择的是用"&"隔开\n`)
+var time = Date.parse(new Date()).toString();
+var time1 = time.substr(0, 10);
+if (zq_cookie) {
+    if (zq_cookie.indexOf("@") == -1 && zq_cookie.indexOf("@") == -1) {
+        zq_cookieArr.push(zq_cookie)
+    } else if (zq_cookie.indexOf("@") > -1) {
+        zq_cookies = zq_cookie.split("@")
+    } else if (process.env.zq_cookie && process.env.zq_cookie.indexOf('@') > -1) {
+        zq_cookieArr = process.env.zq_cookie.split('@');
+        console.log(`您选择的是用"@"隔开\n`)
     }
 } else if ($.isNode()) {
     var fs = require("fs");
-    zq_timebody = fs.readFileSync("zq_timebody.txt", "utf8");
-    if (zq_timebody !== `undefined`) {
-        zq_timebodys = zq_timebody.split("\n");
+    zq_cookie = fs.readFileSync("zq_cookie.txt", "utf8");
+    if (zq_cookie !== `undefined`) {
+        zq_cookies = zq_cookie.split("\n");
     } else {
-        $.msg($.name, '【提示】请点击文章阅读1分钟获取timebody，再跑一次脚本', '不知道说啥好', {
+        $.msg($.name, '【提示】进入点击右下角"任务图标"，再跑一次脚本', '不知道说啥好', {
             "open-url": "给您劈个叉吧"
         });
         $.done()
     }
 }
-Object.keys(zq_timebodys).forEach((item) => {
-    if (zq_timebodys[item] && !zq_timebodys[item].startsWith("#")) {
-        zq_timebodyArr.push(zq_timebodys[item])
+Object.keys(zq_cookies).forEach((item) => {
+    if (zq_cookies[item] && !zq_cookies[item].startsWith("#")) {
+        zq_cookieArr.push(zq_cookies[item])
     }
 })
 
-if (zqwzbody) {
-    if (zqwzbody.indexOf("&") == -1) {
-        zqwzbodyArr.push(zqwzbody)
-    } else if (zqwzbody.indexOf("&") > -1) {
-        zqwzbodys = zqwzbody.split("&")
-    } else if (process.env.zqwzbody && process.env.zqwzbody.indexOf('&') > -1) {
-        zqwzbodyArr = process.env.zqwzbody.split('&');
-        console.log(`您选择的是用"&"隔开\n`)
-    }
-} else if ($.isNode()) {
-    var fs = require("fs");
-    zqwzbody = fs.readFileSync("zqwzbody.txt", "utf8");
-    if (zqwzbody !== `undefined`) {
-        zqwzbodys = zqwzbody.split("\n");
-    } else {
-        $.msg($.name, '【提示】请点击文章获取body，再跑一次脚本', '不知道说啥好', {
-            "open-url": "给您劈个叉吧"
-        });
-        $.done()
-    }
-}
-Object.keys(zqwzbodys).forEach((item) => {
-    if (zqwzbodys[item] && !zqwzbodys[item].startsWith("#")) {
-        zqwzbodyArr.push(zqwzbodys[item])
-    }
-})
 
 !(async () => {
-    if (typeof $request !== "undefined") {
-        getzqwzbody()
-        getzq_timebody()
-        $.done()
-    } else {
+    console.log(`共${zq_cookieArr.length}个cookie`)
+    for (let k = 0; k < zq_cookieArr.length; k++) {
+        $.message = ""
+        bodyVal = zq_cookieArr[k].split('&uid=')[0];
+        cookie = bodyVal.replace(/zqkey=/, "cookie=")
+        cookie_id = cookie.replace(/zqkey_id=/, "cookie_id=")
+        zq_cookie1 = cookie_id + '&request_time=' + time1 + '&time=' + time1 + '&' + bodyVal
+        //待处理cookie
+        //console.log(`${zq_cookie1}`)
+        console.log(`--------第 ${k + 1} 个账号转盘抽奖中--------\n`)
 
-        console.log(`共${zqwzbodyArr.length}个阅读body`)
-        index1 = indexLast * 1
-        for (let k = index1 ? index1 : 0; k < zqwzbodyArr.length; k++) {
-            // $.message = ""
-            zqwzbody1 = zqwzbodyArr[k];
-            // console.log(`${zqwzbody1}`)
-            console.log(`--------第 ${k + 1} 次阅读任务执行中--------\n`)
-            await wzjl()
-            zqwznum = k + 2
-            $.setdata(zqwznum, 'zqbody_index');
-            await $.wait(60000);
-            for (let k = 0; k < zq_timebodyArr.length; k++) {
-                zq_timebody1 = zq_timebodyArr[k];
-                await timejl()
-            }
+        console.log("\n\n")
+
+        for (let k = 0; k < 100; k++) {
+            await Rotary(zq_cookie1, cookie_id, time)
+            await $.wait(6000);
             console.log("\n\n")
         }
-        $.setdata(0, 'zqbody_index');
+        for (let k = 1; k < 5; k++) {
+            id = k.toString()
+            await openbox(zq_cookie1, cookie_id, time, id)
+            await $.wait(15000)
+        }
+        console.log("\n\n")
     }
-
-
-
-    // date = new Date()
-    // if ($.isNode() &&date.getHours() == 11 && date.getMinutes()<10) {
-    //     if (message.length != 0) {
-    //            await notify.sendNotify("晶彩看点文章阅读", `${message}\n\n shaolin-kongfu`);
-    //     }
-    // } else {
-    //     $.msg($.name, "",  message)
-    // }
-
 })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
-
-
-function getzqwzbody() {
-    if ($request.url.match(/\/kandian.wkandian.com\/v5\/article\/info.json/) || $request.url.match(/\/kandian.wkandian.com\/v5\/article\/detail.json/)) {
-        bodyVal1 = $request.url.split('p=')[1]
-        console.log(encodeURIComponent(bodyVal1))
-        bodyVal = 'p=' + encodeURIComponent(bodyVal1)
-        console.log(bodyVal)
-
-        if (zqwzbody) {
-            if (zqwzbody.indexOf(bodyVal) > -1) {
-                $.log("此阅读请求已存在，本次跳过")
-            } else if (zqwzbody.indexOf(bodyVal) == -1) {
-                zqwzbodys = zqwzbody + "&" + bodyVal;
-                $.setdata(zqwzbodys, 'zqwzbody');
-                $.log(`${$.name}获取阅读: 成功, zqwzbodys: ${bodyVal}`);
-                bodys = zqwzbodys.split("&")
-                $.msg($.name, "获取第" + bodys.length + "个阅读请求: 成功🎉", ``)
-            }
-        } else {
-            $.setdata(bodyVal, 'zqwzbody');
-            $.log(`${$.name}获取阅读: 成功, zqwzbodys: ${bodyVal}`);
-            $.msg($.name, `获取第一个阅读请求: 成功🎉`, ``)
-        }
-    }
-
-}
-//阅读文章奖励
-function wzjl(timeout = 0) {
-    return new Promise((resolve) => {
+//抽奖
+function Rotary(zq_cookie1, cookie_id, time) {
+    return new Promise((resolve, reject) => {
         let url = {
-            url: 'https://kandian.wkandian.com/v5/article/complete.json',
-            headers: wzheader,
-            body: zqwzbody1,
-        }//xsgbody,}
+            url: 'https://kandian.wkandian.com/WebApi/RotaryTable/turnRotary?_=' + zq_cookie1,
+            headers: {
+                'Host': 'kandian.wkandian.com',
+                'Referer': 'https://kandian.wkandian.com/html/rotaryTable/index.html?' + zq_cookie1
+            },
+            body: cookie_id,
+        }
         $.post(url, async (err, resp, data) => {
             try {
-
                 const result = JSON.parse(data)
-                if (result.items.read_score !== "undefined") {
-                    console.log('\n浏览文章成功，获得：' + result.items.read_score + '金币')
+                if (result.status === 1) {
+                    if (result.data.score !== 0) {
+                        console.log('好家伙！你抽中了' + result.data.score + '金币')
+
+                        //console.log('剩'+remain+'次')
+                    } else {
+                        console.log('你抽了个寂寞')
+                    }
 
                 } else {
-                    console.log('\n看太久了，换一篇试试')
+                    console.log('\n抽奖失败，别问我，我也不知道为啥')
                 }
             } catch (e) {
+                $.logErr(e + resp);
             } finally {
                 resolve()
             }
-        }, timeout)
+        })
     })
 }
 
-
-function getzq_timebody() {
-    if ($request.url.match(/\/kandian.wkandian.com\/v5\/user\/stay.json/)) {
-        bodyVal = $request.body
-        console.log(bodyVal)
-        if (zq_timebody) {
-            if (zq_timebody.indexOf(bodyVal) > -1) {
-                $.log("此阅读请求已存在，本次跳过")
-            } else if (zq_timebody.indexOf(bodyVal) == -1) {
-                zq_timebodys = zq_timebody + "&" + bodyVal;
-                $.setdata(zq_timebodys, 'zq_timebody');
-                $.log(`${$.name}获取阅读: 成功, zq_timebodys: ${bodyVal}`);
-                bodys = zq_timebodys.split("&")
-                // $.msg($.name, "获取第" + bodys.length + "个阅读请求: 成功🎉", ``)
-            }
-        } else {
-            $.setdata($request.body, 'zq_timebody');
-            $.log(`${$.name}获取阅读: 成功, zq_timebodys: ${bodyVal}`);
-            $.msg($.name, `获取第一个阅读请求: 成功🎉`, ``)
-        }
-    }
-}
-
-function timejl(timeout = 0) {
+function openbox(zq_cookie1, cookie_id, time, k, timeout = 0) {
     return new Promise((resolve) => {
         let url = {
-            url: 'https://kandian.wkandian.com/v5/user/stay.json',
-            headers: zq_timeheader,
-            body: zq_timebody1,
-        }//xsgbody,}
+            url: 'https://kandian.wkandian.com/WebApi/RotaryTable/chestReward?_=' + time,
+            headers: {
+                'Host': 'kandian.wkandian.com',
+                'User-Agent': 'Mozilla/5.0 (Linux; Android 8.1.0; 16 X Build/OPM1.171019.026; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/65.0.3325.109 Mobile Safari/537.36',
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Accept-Language': 'zh-CN,en-US;q=0.9',
+                'Accept-Encoding': 'gzip, deflate',
+                'Content-Length': (cookie_id + '&num=' + k).length.toString(),
+                'Referer': 'https://kandian.wkandian.com/html/rotaryTable/index.html?' + zq_cookie1
+            },
+            body: cookie_id + '&num=' + k,
+        }
         $.post(url, async (err, resp, data) => {
             try {
-
                 const result = JSON.parse(data)
-                if (result.success === true) {
-                    console.log('\n阅读时长：' + result.time + '秒')
+                if (result.status === 1) {
+                    if (result.data.score !== 0) {
+                        console.log('宝箱获得：' + result.data.score + '金币')
+
+                    } else {
+                        console.log('宝箱打开失败')
+                    }
                 } else {
-                    console.log('\n更新阅读时长失败')
+                    console.log('\n宝箱请求失败')
+
                 }
             } catch (e) {
             } finally {
