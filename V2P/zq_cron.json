@@ -12,7 +12,7 @@
       "time": "15 2 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqqd.js"
+        "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqqd.js"
       }
     },
     {
