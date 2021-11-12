@@ -19,46 +19,55 @@
     },
     {
       "match": "https://kandian.wkandian.com/v5/user/stay.json",
+      "stage": "req",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqwz.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/CommonReward/toGetReward.json",
+      "stage": "req",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqqd.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v17/NewTask/getTaskList.json",
+      "stage": "req",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zq_today_score.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/nameless/adlickstart.json",
+      "stage": "req",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqkkz.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/CommonReward/toGetReward.json",
+      "stage": "req",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqbox.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/wechat/withdraw2.json",
+      "stage": "req",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zq_withdraw.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/task/browse_start.json",
+      "stage": "req",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqllz.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/Sousuo/playStart.json",
+      "stage": "req",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zqssz.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v17/Ad/getReward.json",
+      "stage": "req",
       "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/js_scripts/zq_5_60.js",
       "enable": true
     }
