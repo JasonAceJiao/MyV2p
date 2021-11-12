@@ -7,7 +7,7 @@ shaolin-kongfu
 [rewrite_local]
 
 #签到
-https://kandian.wkandian.com/v5/CommonReward/toGetReward.json 重写目标 https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqqd.js
+https://kandian.wkandian.com/v5/CommonReward/toGetReward.json 重写目标 https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Zq/js_scripts/zqqd.js
 [MITM]
 hostname = kandian.wkandian.com
 */
