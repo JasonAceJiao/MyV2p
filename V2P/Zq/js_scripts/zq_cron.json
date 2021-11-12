@@ -1,14 +1,14 @@
 {
   "name": "中青看点定时任务订阅",
   "desc": "无",
-  "date": "2021-11-14 ",
-  "author": "https://t.me/ShaolinTemple1",
+  "date": "2021-11-13",
+  "author": "JasonJiao",
   "resource": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zq_cron.json",
   "list": [
     {
       "name": "中青签到",
       "type": "cron",
-      "time": "15 2 * * *",
+      "time": "15 0 * * *",
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zq/zqqd.js"
@@ -27,7 +27,7 @@
     {
       "name": "中青看看赚",
       "type": "cron",
-      "time": "45 9 * * *",
+      "time": "10 9 * * *",
       "running": true,
       "job": {
         "type": "runjs",
@@ -37,7 +37,7 @@
     {
       "name": "中青火爆转发",
       "type": "cron",
-      "time": "15 6,12,18 * * *",
+      "time": "11 6,12,18 * * *",
       "running": true,
       "job": {
         "type": "runjs",
@@ -47,7 +47,7 @@
     {
       "name": "中青福利视频",
       "type": "cron",
-      "time": "20 21 * * *",
+      "time": "50 4 * * *",
       "running": true,
       "job": {
         "type": "runjs",
@@ -97,7 +97,7 @@
     {
       "name": "中青打卡赚",
       "type": "cron",
-      "time": "34 5,9 * * *",
+      "time": "21 5,9 * * *",
       "running": true,
       "job": {
         "type": "runjs",
@@ -107,7 +107,7 @@
     {
       "name": "中青搜索赚",
       "type": "cron",
-      "time": "35 5 * * *",
+      "time": "15 5 * * *",
       "running": true,
       "job": {
         "type": "runjs",
@@ -117,7 +117,7 @@
     {
       "name": "中青浏览赚",
       "type": "cron",
-      "time": "34 6 * * *",
+      "time": "14 6 * * *",
       "running": true,
       "job": {
         "type": "runjs",
@@ -127,7 +127,7 @@
     {
       "name": "中青阅读翻倍",
       "type": "cron",
-      "time": "34 5 * * 1",
+      "time": "10 5 * * 1",
       "running": true,
       "job": {
         "type": "runjs",
@@ -137,7 +137,7 @@
     {
       "name": "中青自动提现",
       "type": "cron",
-      "time": "25 10 * * *",
+      "time": "5 10 * * *",
       "running": true,
       "job": {
         "type": "runjs",
