@@ -11,7 +11,7 @@
       "time": "15 0 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zqqd.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqqd.js"
       }
     },
     {
@@ -21,7 +21,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zqwz.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqwz.js"
       }
     },
     {
@@ -31,7 +31,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zqkkz.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqkkz.js"
       }
     },
     {
@@ -41,7 +41,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zq_share.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_share.js"
       }
     },
     {
@@ -51,7 +51,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zq_Adv_video.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_Adv_video.js"
       }
     },
     {
@@ -61,7 +61,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zqbox.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqbox.js"
       }
     },
     {
@@ -71,7 +71,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zq_today_score.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_today_score.js"
       }
     },
     {
@@ -81,7 +81,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zq_friendSign.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_friendSign.js"
       }
     },
     {
@@ -91,7 +91,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zq_Rotary.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_Rotary.js"
       }
     },
     {
@@ -101,7 +101,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zq_wakeup.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_wakeup.js"
       }
     },
     {
@@ -111,7 +111,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zqssz.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqssz.js"
       }
     },
     {
@@ -121,7 +121,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zqllz.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqllz.js"
       }
     },
     {
@@ -131,7 +131,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zq_5_60.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_5_60.js"
       }
     },
     {
@@ -141,7 +141,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zq_double.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_double.js"
       }
     },
     {
@@ -151,7 +151,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/js_scripts/zq_withdraw.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_withdraw.js"
       }
     },
     {
