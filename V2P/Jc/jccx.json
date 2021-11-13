@@ -33,7 +33,7 @@
       "match": "https://ant.xunsl.com/v5/CommonReward/toGetReward.json",
       "stage": "req",
       "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Jc/jcbox.js",
-      "enable": true
+      "enable": false
     },
     {
       "match": "https://ant.xunsl.com/v5/user/stay.json",
