@@ -1,9 +1,9 @@
 {
   "name": "晶彩看点定时任务订阅",
   "desc": "无",
-  "date": "2021-11-13 ",
+  "date": "2021-11-13",
   "author": "JasonJiao",
-  "resource": "https://ghproxy.com/https://raw.githubusercontent.com/jasonacejiao/yuanchengcookie/main/v2p/jc/jc_cron.json",
+  "resource": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Jc/jc_cron.json",
   "list": [
     {
       "name": "晶彩签到",
@@ -21,7 +21,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/jasonacejiao/yuanchengcookie/main/v2p/jc/jcwz.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Jc/jcwz.js"
       }
     },
     {
@@ -31,7 +31,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/jasonacejiao/yuanchengcookie/main/v2p/jc/jckkz.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Jc/jckkz.js"
       }
     },
     {
@@ -41,7 +41,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/jasonacejiao/yuanchengcookie/main/v2p/jc/jc_share.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Jc/jc_share.js"
       }
     },
     {
@@ -51,7 +51,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/jasonacejiao/yuanchengcookie/main/v2p/jc/jc_Adv_video.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Jc/jc_Adv_video.js"
       }
     },
     {
@@ -61,7 +61,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/jasonacejiao/yuanchengcookie/main/v2p/jc/jcbox.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Jc/jcbox.js"
       }
     },
     {
@@ -71,7 +71,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/jasonacejiao/yuanchengcookie/main/v2p/jc/jc_friendSign.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Jc/jc_friendSign.js"
       }
     },
     {
@@ -81,7 +81,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/jasonacejiao/yuanchengcookie/main/v2p/jc/jc_Rotary.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Jc/jc_Rotary.js"
       }
     },
     {
@@ -91,7 +91,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/jasonacejiao/yuanchengcookie/main/v2p/jc/jc_withdraw.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Jc/jc_withdraw.js"
       }
     },
     {
@@ -101,7 +101,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/jasonacejiao/yuanchengcookie/main/v2p/jc/jc_today_score.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/Jc/jc_today_score.js"
       }
     }
   ]
