@@ -75,7 +75,7 @@
     }
   ],
   "task": {
-    "type": "skip",
+    "type": "replace",
     "list": [
       {
         "name": "中青签到",
