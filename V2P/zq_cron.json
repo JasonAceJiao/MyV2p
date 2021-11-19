@@ -65,6 +65,16 @@
       }
     },
     {
+      "name": "中青听歌",
+      "type": "cron",
+      "time": "10 10-18 * * *",
+      "running": true,
+      "job": {
+        "type": "runjs",
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_music.js"
+      }
+    },
+    {
       "name": "中青每日收益统计",
       "type": "cron",
       "time": "15 23 * * *",
