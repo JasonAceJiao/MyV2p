@@ -78,7 +78,7 @@
       "stage": "req",
       "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_music.js",
       "enable": true
-    },
+    }
   ],
   "task": {
     "type": "replace",
