@@ -32,6 +32,12 @@
       "enable": true
     },
     {
+      "match": "https://kandian.wkandian.com/v5/CommonReward/toGetReward.json",
+      "stage": "req",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqbox.js",
+      "enable": false
+    },
+    {
       "match": "https://kandian.wkandian.com/v17/NewTask/getTaskList.json",
       "stage": "req",
       "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_today_score.js",
@@ -42,12 +48,6 @@
       "stage": "req",
       "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqkkz.js",
       "enable": true
-    },
-    {
-      "match": "https://kandian.wkandian.com/v5/CommonReward/toGetReward.json",
-      "stage": "req",
-      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqbox.js",
-      "enable": false
     },
     {
       "match": "https://kandian.wkandian.com/v5/wechat/withdraw2.json",
@@ -72,7 +72,13 @@
       "stage": "req",
       "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_5_60.js",
       "enable": true
-    }
+    },
+    {
+      "match": "https://kandian.wkandian.com/V17/Ximalaya/setCompleteSec.json",
+      "stage": "req",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_music.js",
+      "enable": true
+    },
   ],
   "task": {
     "type": "replace",
@@ -204,6 +210,16 @@
         "job": {
           "type": "runjs",
           "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_5_60.js"
+        }
+      },
+      {
+        "name": "中青听歌",
+        "type": "cron",
+        "time": "10 10-18 * * *",
+        "running": true,
+        "job": {
+          "type": "runjs",
+          "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zq_music.js"
         }
       },
       {
