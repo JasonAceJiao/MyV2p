@@ -2,7 +2,7 @@
   "name": "中青重写订阅",
   "type": "rewrite",
   "author": "JasonJiao",
-  "resource": "https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqcx.json",
+  "resource": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/YuanChengCookie/main/V2P/zqcx.json",
   "mitmhost": [
     "kandian.wkandian.com"
   ],
