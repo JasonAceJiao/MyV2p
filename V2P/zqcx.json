@@ -205,7 +205,7 @@
       {
         "name": "5分60分宝箱",
         "type": "cron",
-        "time": "14 6 * * *",
+        "time": "14 18 * * *",
         "running": true,
         "job": {
           "type": "runjs",
