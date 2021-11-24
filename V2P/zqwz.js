@@ -141,9 +141,9 @@ Object.keys(zqwzbodys).forEach((item) => {
 
 function getzqwzbody() {
     if ($request.url.match(/\/kandian.wkandian.com\/v5\/article\/info.json/) || $request.url.match(/\/kandian.wkandian.com\/v5\/article\/detail.json/)) {
-        bodyVal1 = $request.url.split('zqkd_param=')[1]
+        bodyVal1 = $request.url.split('p=')[1]
         console.log(encodeURIComponent(bodyVal1))
-        bodyVal = 'zqkd_param=' + encodeURIComponent(bodyVal1)
+        bodyVal = 'p=' + encodeURIComponent(bodyVal1)
         console.log(bodyVal)
 
         if (zqwzbody) {
