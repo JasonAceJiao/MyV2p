@@ -3,7 +3,7 @@
   "type": "rewrite",
   "author": "JasonJiao",
   "resource": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/MyV2p/main/V2P/zqcx.json",
-  "mitmhost": [
+  "mitmhost": [      
     "kandian.wkandian.com"
   ],
   "list": [
