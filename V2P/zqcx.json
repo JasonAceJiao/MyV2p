@@ -6,7 +6,7 @@
   "mitmhost": [
     "kandian.wkandian.com"
   ],
-  "rewrite": [
+  "list": [
     {
       "match": "https://kandian.wkandian.com/v5/article/info.json",
       "stage": "req",
