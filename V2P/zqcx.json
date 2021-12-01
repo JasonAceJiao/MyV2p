@@ -3,7 +3,7 @@
   "type": "rewrite",
   "author": "JasonJiao",
   "resource": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/MyV2p/main/V2P/zqcx.json",
-  "mitmhost": [      
+  "mitmhost": [
     "kandian.wkandian.com"
   ],
   "list": [
@@ -78,6 +78,12 @@
       "stage": "req",
       "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/MyV2p/main/V2P/zq_music.js",
       "enable": true
+    },
+    {
+      "match": "https://kandian.wkandian.com/v5/CommonReward/toDouble.json",
+      "stage": "req",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/MyV2p/main/V2P/zq_fbjl.js",
+      "enable": true
     }
   ],
   "task": {
@@ -135,7 +141,7 @@
       {
         "name": "中青每日任务宝箱领取",
         "type": "cron",
-        "time": "15 22 * * *",
+        "time": "59 21 * * *",
         "running": true,
         "job": {
           "type": "runjs",
@@ -165,7 +171,7 @@
       {
         "name": "中青抽奖",
         "type": "cron",
-        "time": "34 22 * * *",
+        "time": "14 21 * * *",
         "running": true,
         "job": {
           "type": "runjs",
@@ -230,6 +236,16 @@
         "job": {
           "type": "runjs",
           "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/MyV2p/main/V2P/zq_double.js"
+        }
+      },
+      {
+        "name": "奖励翻倍领取",
+        "type": "cron",
+        "time": "05 22 * * 1",
+        "running": true,
+        "job": {
+          "type": "runjs",
+          "target": "https://ghproxy.com/https://raw.githubusercontent.com/JasonAceJiao/MyV2p/main/V2P/zq_fbjl.js"
         }
       },
       {
